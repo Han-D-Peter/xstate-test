@@ -1,12 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import ConditionalState from "./pages/ConditionalState";
+import Paths from "./pages/Paths";
+import { router } from "./router";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/router" element={<ConditionalState />}></Route>
+        {router.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={route.component}
+          ></Route>
+        ))}
       </Routes>
+      <Paths />
     </div>
   );
 }
