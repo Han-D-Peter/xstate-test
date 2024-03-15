@@ -82,3 +82,44 @@ export const localStateCountState = createMachine({
     },
   },
 });
+
+export const humanInfoState = createMachine({
+  initial: "NAME",
+  context: {
+    name: "",
+    age: null,
+    address: "",
+  },
+
+  states: {
+    NAME: {
+      on: {
+        input: {
+          actions: assign({
+            name: ({ event }) => event.event,
+          }),
+          target: "AGE",
+        },
+      },
+    },
+    AGE: {
+      on: {
+        input: {
+          actions: assign({
+            age: ({ event }) => event.event,
+          }),
+          target: "ADDRESS",
+        },
+      },
+    },
+    ADDRESS: {
+      on: {
+        input: {
+          actions: assign({
+            address: ({ event }) => event.event,
+          }),
+        },
+      },
+    },
+  },
+});
