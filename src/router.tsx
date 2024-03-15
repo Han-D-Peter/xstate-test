@@ -1,7 +1,17 @@
 import ConditionalState from "./pages/ConditionalState";
 import ContextCount from "./pages/ContextCount";
+import ModeChangeCount from "./pages/ModeChangeCount";
 
 export const router = [
   { name: "조건부 상태", path: "/router", component: <ConditionalState /> },
-  { name: "카운터", path: "/counter", component: <ContextCount /> },
+  {
+    name: "컨텍스트 카운터",
+    path: "/contextcounter",
+    component: <ContextCount />,
+  },
+  {
+    name: "모드 변경 카운터",
+    path: "/modechangecount",
+    component: <ModeChangeCount />,
+  },
 ];
