@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route index element={<ConditionalState />}></Route>
+        <Route path="/router" element={<ConditionalState />}></Route>
       </Routes>
     </div>
   );
