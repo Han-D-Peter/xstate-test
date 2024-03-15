@@ -1,6 +1,6 @@
 # xstate 연습을 위한 레포
 
-## 배포([링크](https://superb-concha-2c5986.netlify.app/modechangecount)
+## 배포([링크](https://superb-concha-2c5986.netlify.app)
 
 ## 라우터
 
