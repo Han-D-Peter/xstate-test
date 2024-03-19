@@ -1,4 +1,4 @@
-import { assign, createMachine } from "xstate";
+import { assign, createMachine, fromPromise, setup } from "xstate";
 
 export const conditionOfState = createMachine({
   initial: "pending",
@@ -119,6 +119,50 @@ export const humanInfoState = createMachine({
             address: ({ event }) => event.event,
           }),
         },
+      },
+    },
+  },
+});
+
+async function fetchMovies() {
+  return fetch(
+    "https://yts.am/api/v2/list_movies.json?sort_by=download_count",
+    { mode: "no-cors" }
+  ).then((res) => res.json());
+}
+
+export const asyncState = setup({
+  actors: {
+    fetchMovies: fromPromise(fetchMovies),
+  },
+}).createMachine({
+  initial: "loading",
+  context: {
+    movies: [],
+  },
+
+  states: {
+    loading: {
+      invoke: {
+        id: "fetch-movies",
+        src: "fetchMovies",
+        onDone: {
+          target: "loaded",
+          actions: assign({
+            movies: ({ event }) => event.output,
+          }),
+        },
+        onError: "failure",
+      },
+    },
+    loaded: {
+      on: {
+        REFRESH: "loading",
+      },
+    },
+    failure: {
+      on: {
+        RETRY: "loading",
       },
     },
   },

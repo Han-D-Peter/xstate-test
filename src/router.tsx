@@ -1,3 +1,4 @@
+import AsyncState from "./pages/AsyncState";
 import ConditionalState from "./pages/ConditionalState";
 import ContextCount from "./pages/ContextCount";
 import ModeChangeCount from "./pages/ModeChangeCount";
@@ -19,5 +20,10 @@ export const router = [
     name: "순차적 양식",
     path: "/stepform",
     component: <StepForm />,
+  },
+  {
+    name: "비동기 상태",
+    path: "/asyncstate",
+    component: <AsyncState />,
   },
 ];
