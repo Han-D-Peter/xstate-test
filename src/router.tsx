@@ -1,6 +1,7 @@
 import AsyncState from "./pages/AsyncState";
 import ConditionalState from "./pages/ConditionalState";
 import ContextCount from "./pages/ContextCount";
+import EntriedActionState from "./pages/EntriedActionState";
 import ModeChangeCount from "./pages/ModeChangeCount";
 import StepForm from "./pages/StepForm";
 
@@ -25,5 +26,10 @@ export const router = [
     name: "비동기 상태",
     path: "/asyncstate",
     component: <AsyncState />,
+  },
+  {
+    name: "Entry 사용",
+    path: "/entrystate",
+    component: <EntriedActionState />,
   },
 ];
