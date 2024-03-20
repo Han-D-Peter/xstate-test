@@ -1,5 +1,23 @@
 import { useMachine } from "@xstate/react";
-import { conditionOfState } from "../machine";
+import { createMachine } from "xstate";
+
+const conditionOfState = createMachine({
+  initial: "pending",
+  states: {
+    pending: {
+      on: {
+        RESOLVE: { target: "resolved" },
+        REJECT: { target: "rejected" },
+      },
+    },
+    resolved: {
+      type: "final",
+    },
+    rejected: {
+      type: "final",
+    },
+  },
+});
 
 export default function ConditionalState() {
   const [state, send] = useMachine(conditionOfState);
