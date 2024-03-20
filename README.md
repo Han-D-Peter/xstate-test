@@ -8,3 +8,4 @@
 - `/contextcounter` 일반적인 카운터 기능
 - `/modechangecount` 관점을 달리하는 증가/감소 카운터
 - `/stepform` step 형식의 폼 제어
+- `/asyncstate` 비동기 데이터를 다루는 xstate
