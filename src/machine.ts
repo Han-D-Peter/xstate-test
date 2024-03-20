@@ -125,10 +125,9 @@ export const humanInfoState = createMachine({
 });
 
 async function fetchMovies() {
-  return fetch(
-    "https://yts.am/api/v2/list_movies.json?sort_by=download_count",
-    { mode: "no-cors" }
-  ).then((res) => res.json());
+  return fetch("https://yts.mx/api/v2/list_movies.json").then((res) =>
+    res.json()
+  );
 }
 
 export const asyncState = setup({
