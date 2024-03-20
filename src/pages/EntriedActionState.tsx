@@ -1,7 +1,7 @@
 import { useMachine } from "@xstate/react";
 import { setup } from "xstate";
 
-function initializing(_: unknown, params: { count: number }) {
+function initializing(context: unknown, params: { count: number }) {
   alert(`init count = ${params.count}`);
 }
 
