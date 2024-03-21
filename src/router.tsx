@@ -1,6 +1,7 @@
 import AsyncState from "./pages/AsyncState";
 import ConditionalState from "./pages/ConditionalState";
 import ContextCount from "./pages/ContextCount";
+import EnqueueActionState from "./pages/EnqueueActionState";
 import EntriedActionState from "./pages/EntriedActionState";
 import ModeChangeCount from "./pages/ModeChangeCount";
 import StepForm from "./pages/StepForm";
@@ -31,5 +32,10 @@ export const router = [
     name: "Entry 사용",
     path: "/entrystate",
     component: <EntriedActionState />,
+  },
+  {
+    name: "Enqueue Actions 사용",
+    path: "/enqueueactions",
+    component: <EnqueueActionState />,
   },
 ];
