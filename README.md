@@ -9,3 +9,6 @@
 - `/modechangecount` 관점을 달리하는 증가/감소 카운터
 - `/stepform` step 형식의 폼 제어
 - `/asyncstate` 비동기 데이터를 다루는 xstate
+- `/entrystate` didmount 와 같은 효과
+- `/enqueueactions` 순차 실행(그냥 실행보다 조건부 옵션을 가져갈 수 있다는 것이 장점)
+- `/guardstate` 가드 사용
