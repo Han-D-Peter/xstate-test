@@ -12,3 +12,4 @@
 - `/entrystate` didmount 와 같은 효과
 - `/enqueueactions` 순차 실행(그냥 실행보다 조건부 옵션을 가져갈 수 있다는 것이 장점)
 - `/guardstate` 가드 사용
+- `/conditionalguardstate` 가드 사용

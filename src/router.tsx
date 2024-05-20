@@ -1,4 +1,5 @@
 import AsyncState from "./pages/AsyncState";
+import ConditionalGuardState from "./pages/ConditionalGuardState";
 import ConditionalState from "./pages/ConditionalState";
 import ContextCount from "./pages/ContextCount";
 import EnqueueActionState from "./pages/EnqueueActionState";
@@ -43,5 +44,10 @@ export const router = [
     name: "Guard 사용",
     path: "/guardstate",
     component: <GuardState />,
+  },
+  {
+    name: "조건부로써 Guard 사용",
+    path: "/conditionalguardstate",
+    component: <ConditionalGuardState />,
   },
 ];

@@ -3,7 +3,7 @@ import { Fragment } from "react/jsx-runtime";
 import { assign, fromPromise, setup } from "xstate";
 
 async function fetchMovies() {
-  return fetch("https://yts.mx/api/v2/list_movies.json").then((res) =>
+  return await fetch("https://yts.mx/api/v2/list_movies.json").then((res) =>
     res.json()
   );
 }
